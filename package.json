@@ -1,0 +1,15 @@
+{
+  "name": "keras-rnn",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gesture.js",
+  "scripts": {
+    "start": "budo ./js/client.js -o -l",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "touches": "^1.2.0"
+  }
+}
