@@ -1,12 +1,11 @@
-from connect import *
+from connect import onGestureEvent, send, start
 from train import Trainer
 
 def onPrediction(results):
     pass
-trainer = new Trainer(onPrediction)
-trainer.train(0, 0)
+trainer = Trainer(onPrediction)
 def trainCallback(action, data):
     pass
 
-onTrainEvent(trainCallback)
+onGestureEvent(trainCallback)
 start()

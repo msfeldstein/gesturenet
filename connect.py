@@ -1,7 +1,7 @@
 from SimpleWebSocketServer import SimpleWebSocketServer, WebSocket
 import json
 
-onTrainCallback = None
+onGestureCallback = None
 
 class MessageHandler(WebSocket):
     def handleMessage(self):
@@ -9,9 +9,9 @@ class MessageHandler(WebSocket):
         action = payload['action']
         data = payload['data']
         print "Received", action
-        print onTrainCallback
-        if onTrainCallback != None:
-            onTrainCallback(action, data)
+        print onGestureCallback
+        if onGestureCallback != None:
+            onGestureCallback(action, data)
         
     def handleConnected(self):
         print self.address, 'connected'
@@ -22,10 +22,12 @@ class MessageHandler(WebSocket):
 
 server = SimpleWebSocketServer('', 8000, MessageHandler)
 
-def onTrainEvent(cb):
-    global onTrainCallback
-    onTrainCallback = cb
-    
+def onGestureEvent(cb):
+    global onGestureCallback
+    onGestureCallback = cb
+
+def send(data):
+    pass
 def start():
     server.serveforever()
     
