@@ -2,7 +2,7 @@ const instructions = ['/', '\\', '-', 'o', 'L']
 
 const Instructor = function() {
   this.instructionContainer = document.createElement('h1')
-  this.instructionContainer.style.textAlign = 'center'
+  this.instructionContainer.className = 'instructor'
   document.body.appendChild(this.instructionContainer)
   this.index = 0
   this.next()

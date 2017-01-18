@@ -10,7 +10,14 @@ var $ = function(qs) {
 }
 
 var trainingModeBox = $('#training-mode')
-
+trainingModeBox.addEventListener('change', () => {
+  if (trainingModeBox.checked) {
+    document.body.classList.remove('predict')
+  } else {
+    document.body.classList.add('predict')
+  }
+  
+})
 var sketcher = new Sketcher(function(deltas) {
   var action = trainingModeBox.checked ? 'train' : 'predict'
   console.log("Sending action", action)
