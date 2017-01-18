@@ -4,7 +4,7 @@
   "description": "",
   "main": "gesture.js",
   "scripts": {
-    "start": "nodemon --exec \"python\" ./main.py & budo ./js/client.js -o -l",
+    "start": "nodemon --exec \"python\" ./python/main.py & budo ./js/client.js -o -l",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Mike Feldstein <feldstein@fb.com>",
@@ -12,6 +12,8 @@
   "dependencies": {
     "concurrently": "^3.1.0",
     "d3": "^4.4.1",
+    "jquery": "^3.1.1",
+    "plotly.js": "^1.21.3",
     "reconnectingwebsocket": "^1.0.0",
     "touches": "^1.2.0"
   }

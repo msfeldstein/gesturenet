@@ -26,9 +26,26 @@ class Trainer:
         x_in = np.array([points])
         x_in.resize((1, self.timesteps, self.data_dim))
         y_train = np.array([class_value])
-        self.model.fit(x_in, y_train, nb_epoch=2)
+        self.model.fit(x_in, y_train)
         prediction = self.model.predict(x_in)
         print("Should be ", class_value)
         print("Prediction ", prediction)
         self.listener(prediction)
+        
+    def predict(self, points):
+        x_in = np.array([points])
+        x_in.resize((1, self.timesteps, self.data_dim))
+        prediction = self.model.predict(x_in)
+        print("Prediction ", prediction)
+        self.listener(prediction)
+        
+    def save(self):
+        filename = "model.h5"
+        self.model.save_weights(filename)
+        print("Weights saved to " + filename)
+        
+    def load(self):
+        filename = "model.h5"
+        self.model.load_weights(filename)
+        print("Weights loaded from " + filename)
         
