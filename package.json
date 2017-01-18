@@ -4,12 +4,13 @@
   "description": "",
   "main": "gesture.js",
   "scripts": {
-    "start": "budo ./js/client.js -o -l",
+    "start": "nodemon --exec \"python\" ./main.py & budo ./js/client.js -o -l",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Mike Feldstein <feldstein@fb.com>",
   "license": "ISC",
   "dependencies": {
+    "concurrently": "^3.1.0",
     "touches": "^1.2.0"
   }
 }
