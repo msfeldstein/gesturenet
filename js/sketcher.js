@@ -1,11 +1,12 @@
 var Touch = require('touches')
 
-const Sketcher = function(listener) {
+const Sketcher = function(listener, size) {
   var deltas = []
+  size = size || 512
   
   var canvas = document.createElement('canvas')
-  canvas.width = 512
-  canvas.height = 512
+  canvas.width = size
+  canvas.height = size
   canvas.style.backgroundColor = 'black'
   document.body.appendChild(canvas)
   var ctx = canvas.getContext('2d')

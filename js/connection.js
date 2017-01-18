@@ -20,7 +20,14 @@ const Connection = function(port) {
 }
 
 Connection.prototype.addCallback = function(cb) {
-  this.connection.onmessage = cb; 
+  this.connection.onmessage = function(e) {
+    var reader = new FileReader();
+    reader.addEventListener("loadend", function() {
+      debugger
+      cb(JSON.parse(reader.result))
+    });
+    reader.readAsText(e.data);
+  }; 
 }
 
 Connection.prototype.send = function(action, data) {

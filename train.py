@@ -26,7 +26,7 @@ class Trainer:
         x_in = np.array([points])
         x_in.resize((1, self.timesteps, self.data_dim))
         y_train = np.array([class_value])
-        self.model.fit(x_in, y_train)
+        self.model.fit(x_in, y_train, nb_epoch=2)
         prediction = self.model.predict(x_in)
         print("Should be ", class_value)
         print("Prediction ", prediction)
