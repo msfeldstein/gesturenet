@@ -5,6 +5,7 @@ def onPrediction(results):
     pass
 trainer = Trainer(onPrediction)
 def trainCallback(action, data):
+    print("Got Data", data, len(data["points"]))
     pass
 
 onGestureEvent(trainCallback)

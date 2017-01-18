@@ -6,7 +6,7 @@ class Trainer:
     def __init__(self, listener):
         self.listener = listener
         self.data_dim = 2
-        self.timesteps = 8
+        self.timesteps = 100 # Max number of gesture points
         self.nb_classes = 5
 
         # expected input data shape: (batch_size, timesteps, data_dim)
